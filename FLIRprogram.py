@@ -8,7 +8,7 @@ from flirpy.camera.lepton import Lepton
 
 #choosing camera
 #cap = Lepton()
-cap = cv.VideoCapture(1)
+cap = cv.VideoCapture(0)
 
 def BackgroundDeletion(frame): #delete background from the video
 	T, threshold = cv.threshold(frame, 150, 255, cv.THRESH_BINARY+cv.THRESH_OTSU)
