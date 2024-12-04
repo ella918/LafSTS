@@ -37,7 +37,7 @@ with Lepton() as camera:
 			if contourSize > maxContour and contourSize > 90:
 				maxContour = contourSize
 				maxContourData = contour
-		if contours is not None:
+		if maxContour != 0:
 			mask = np.zeros_like(frame)
 			cv.fillPoly(mask,[maxContourData],1)
 			M = cv.moments(mask)
