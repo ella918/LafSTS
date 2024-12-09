@@ -67,7 +67,9 @@ with Lepton() as camera:
 		masked2 = masked.astype(np.uint8)
 		blobed = SimpleBlob(masked2)
 		blobcopy = cv.resize(blobed, (900,500))
-		cv.imshow('blob', blobcopy)
+		#blobcopy2 = cv.flip(blobcopy, 1)
+		blobcopy2 = cv.flip(blobcopy, 0)
+		cv.imshow('blob', blobcopy2)
 		
 		
 		if cv.waitKey(1) == 27:
