@@ -43,7 +43,8 @@ with Lepton() as camera:
 			M = cv.moments(mask)
 			cX = int(M["m10"] / M["m00"])
 			cY = int(M["m01"] / M["m00"])
-			simpleblob = cv.circle(frame, (cX, cY), 10, (255, 0, 0), 2)
+			simpleblobcolor = cv.cvtColor(frame, cv.COLOR_GRAY2RGB)
+			simpleblob = cv.circle(simpleblobcolor, (cX, cY), 10, (255, 0, 0), 2)
 		else:
 			simpleblob = frame
 		return simpleblob
